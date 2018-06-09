@@ -7,7 +7,7 @@ describe('record', function(){
 
 
     beforeEach(function(){
-        record = new Record("Queen", "Innuendo");
+        record = new Record("Queen", "Innuendo", "Rock");
       });
 
   it('should have a artist', function(){
@@ -16,6 +16,10 @@ describe('record', function(){
 
   it('should have a title', function(){
     assert.strictEqual(record.title, "Innuendo");
+  });
+
+  it ('should have a genre', function(){
+    assert.strictEqual(record.genre, "Rock")
   });
 
 
