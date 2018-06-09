@@ -48,6 +48,15 @@ describe('recordStore', function(){
     assert.deepStrictEqual(recordStore.listInventory(), [record1, record2]);
   });
 
+  it('should sell record that increases balance', function(){
+    recordStore.addRecord(record1);
+    recordStore.addRecord(record2);
+    recordStore.addRecord(record3);
+    recordStore.sellRecord(record1);
+    assert.deepStrictEqual(recordStore.inventory.length, 2);
+    assert.strictEqual(recordStore.balance, 1010);
+  });
+
 
 
 

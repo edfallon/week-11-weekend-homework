@@ -18,20 +18,12 @@ RecordStore.prototype.listInventory = function() {
   return this.inventory;
 };
 
-
-
-
-
-// Bank.prototype.businessAccounts = function() {
-//   let foundAccounts = [];
-//
-//   this.accounts.forEach(function(account) {
-//     if (account.type === 'business') {
-//       foundAccounts.push(account);
-//     }
-//   })
-//
-//   return foundAccounts;
-// };
+RecordStore.prototype.sellRecord = function (record) {
+  let index = this.inventory.indexOf(record);
+  if(index !== -1) {
+  this.inventory.splice(index, 1);
+  this.balance += record.price;
+}
+};
 
 module.exports = RecordStore;
