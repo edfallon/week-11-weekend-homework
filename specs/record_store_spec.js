@@ -57,6 +57,13 @@ describe('recordStore', function(){
     assert.strictEqual(recordStore.balance, 1010);
   });
 
+  it('should be able to return stores balance plus stock value', function(){
+    recordStore.addRecord(record1);
+    recordStore.addRecord(record2);
+    recordStore.addRecord(record3);
+    assert.strictEqual(recordStore.totalValue(), 1030);
+  });
+
 
 
 
