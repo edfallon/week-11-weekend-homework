@@ -64,6 +64,13 @@ describe('recordStore', function(){
     assert.strictEqual(recordStore.totalValue(), 1030);
   });
 
+  it('should be able to view records by genre', function(){
+    recordStore.addRecord(record1);
+    recordStore.addRecord(record2);
+    recordStore.addRecord(record3);
+    assert.strictEqual(recordStore.viewByGenre("Rock"), record1);
+  });
+
 
 
 

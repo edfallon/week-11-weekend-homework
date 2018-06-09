@@ -34,6 +34,13 @@ RecordStore.prototype.totalValue = function () {
   return total += this.balance;
 };
 
+RecordStore.prototype.viewByGenre = function (genre) {
+  const array = this.inventory.filter(function(record){
+    return record.genre === genre;
+  });
+  return array[0];
+};
+
 
 
 
