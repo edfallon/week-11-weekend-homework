@@ -16,6 +16,10 @@ describe('recordCollector', function(){
     assert.strictEqual(recordCollector1.cash, 100);
   });
 
+  it('should have a collection of records that starts empty', function(){
+    assert.strictEqual(recordCollector1.collection.length, 0);
+  });
+
 
 
 });
