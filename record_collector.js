@@ -18,4 +18,12 @@ RecordCollector.prototype.sellRecord = function (record) {
 }
 };
 
+RecordCollector.prototype.totalValueOfCollection = function () {
+  let total = 0;
+  this.collection.forEach(function(record){
+    total += record.price;
+  })
+  return total;
+};
+
 module.exports = RecordCollector;

@@ -30,12 +30,19 @@ describe('recordCollector', function(){
   });
 
   it('should be able to sell record', function(){
-    recordCollector1.buyRecord(record1)
-    recordCollector1.buyRecord(record2)
-    recordCollector1.buyRecord(record3)
-    recordCollector1.sellRecord(record1)
+    recordCollector1.buyRecord(record1);
+    recordCollector1.buyRecord(record2);
+    recordCollector1.buyRecord(record3);
+    recordCollector1.sellRecord(record1);
     assert.strictEqual(recordCollector1.collection.length, 2);
     assert.strictEqual(recordCollector1.cash, 80);
+  });
+
+  it('should be able to show the value of collection', function(){
+    recordCollector1.buyRecord(record1);
+    recordCollector1.buyRecord(record2);
+    recordCollector1.buyRecord(record3);
+    assert.strictEqual(recordCollector1.totalValueOfCollection(), 30);
   });
 
 
