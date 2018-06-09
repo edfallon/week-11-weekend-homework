@@ -38,6 +38,10 @@ describe('recordStore', function(){
     assert.strictEqual(recordStore.inventory.length, 3);
   });
 
+  it('should print out records properties', function(){
+    assert.strictEqual(recordStore.printProperties(record1),"Artist: Queen, Title: Innuendo, Genre: Rock, Price: 10");
+  });
+
 
 
 
