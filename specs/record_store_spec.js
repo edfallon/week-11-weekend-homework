@@ -42,6 +42,12 @@ describe('recordStore', function(){
     assert.strictEqual(recordStore.printProperties(record1),"Artist: Queen, Title: Innuendo, Genre: Rock, Price: 10");
   });
 
+  it('should list all inventory', function(){
+    recordStore.addRecord(record1);
+    recordStore.addRecord(record2);
+    assert.deepStrictEqual(recordStore.listInventory(), [record1, record2]);
+  });
+
 
 
 
