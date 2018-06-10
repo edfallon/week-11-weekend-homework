@@ -44,4 +44,11 @@ RecordCollector.prototype.totalValueOfCollectionByGenre = function (genre) {
 
 };
 
+RecordCollector.prototype.showMostValuable = function () {
+  this.collection.sort(function(a,b){
+    return b.price - a.price;
+  })
+  return this.collection[0];
+};
+
 module.exports = RecordCollector;

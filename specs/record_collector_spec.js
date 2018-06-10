@@ -61,6 +61,13 @@ describe('recordCollector', function(){
     assert.deepStrictEqual(recordCollector1.sortByHighestValueFirst(), [record5, record4, record1]);
   });
 
+  it('should be able to show most valuable record in collection', function(){
+    recordCollector1.buyRecord(record1);
+    recordCollector1.buyRecord(record4);
+    recordCollector1.buyRecord(record5);
+    assert.deepStrictEqual(recordCollector1.showMostValuable(), record5);
+  });
+
 
 
 });
