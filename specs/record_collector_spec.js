@@ -45,6 +45,13 @@ describe('recordCollector', function(){
     assert.strictEqual(recordCollector1.totalValueOfCollection(), 30);
   });
 
+  it('should be able to show value of collecton by genre', function(){
+    recordCollector1.buyRecord(record1);
+    recordCollector1.buyRecord(record2);
+    recordCollector1.buyRecord(record3);
+    assert.strictEqual(recordCollector1.totalValueOfCollectionByGenre('Rock', 10));
+  });
+
 
 
 });

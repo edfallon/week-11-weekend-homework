@@ -26,4 +26,15 @@ RecordCollector.prototype.totalValueOfCollection = function () {
   return total;
 };
 
+RecordCollector.prototype.totalValueOfCollectionByGenre = function (genre) {
+  let total = 0;
+  this.collection.forEach(function(record){
+    if(record.genre === genre){
+      total += record.price;
+    }
+    return total;
+  })
+  
+};
+
 module.exports = RecordCollector;
