@@ -14,6 +14,8 @@ describe('recordCollector', function(){
         record1 = new Record("Queen", "Innuendo", "Rock", 10);
         record2 = new Record("Eminem", "The Marshall Mathers LP", "Rap", 10);
         record3 = new Record("Mcfly", "Motion in the Ocean", "Pop", 10);
+        record4 = new Record("Oasis", "Stop the Clocks", "Rock", 20);
+        record5 = new Record("The Beatles", "White Album", "Pop", 30);
       });
 
   it('should have a cash', function(){
@@ -50,6 +52,13 @@ describe('recordCollector', function(){
     recordCollector1.buyRecord(record2);
     recordCollector1.buyRecord(record3);
     assert.strictEqual(recordCollector1.totalValueOfCollectionByGenre('Rock', 10));
+  });
+
+  it('should be able to show collection in order of value', function(){
+    recordCollector1.buyRecord(record1);
+    recordCollector1.buyRecord(record4);
+    recordCollector1.buyRecord(record5);
+    assert.deepStrictEqual(recordCollector1.sortByHighestValueFirst(), [record5, record4, record1]);
   });
 
 

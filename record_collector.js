@@ -34,7 +34,14 @@ RecordCollector.prototype.totalValueOfCollectionByGenre = function (genre) {
     }
     return total;
   })
-  
+
+  RecordCollector.prototype.sortByHighestValueFirst = function () {
+  this.collection.sort(function(a,b){
+    return b.price - a.price;
+  })
+  return this.collection;
+};
+
 };
 
 module.exports = RecordCollector;
