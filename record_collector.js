@@ -51,4 +51,8 @@ RecordCollector.prototype.showMostValuable = function () {
   return this.collection[0];
 };
 
+RecordCollector.prototype.compareValue = function (collector) {
+  return "My collection value is: £"+this.totalValueOfCollection()+", the other collectors value is: £"+collector.totalValueOfCollection()
+};
+
 module.exports = RecordCollector;

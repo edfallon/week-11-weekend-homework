@@ -11,6 +11,7 @@ describe('recordCollector', function(){
 
     beforeEach(function(){
         recordCollector1 = new RecordCollector(100);
+        recordCollector2 = new RecordCollector(100);
         record1 = new Record("Queen", "Innuendo", "Rock", 10);
         record2 = new Record("Eminem", "The Marshall Mathers LP", "Rap", 10);
         record3 = new Record("Mcfly", "Motion in the Ocean", "Pop", 10);
@@ -66,6 +67,15 @@ describe('recordCollector', function(){
     recordCollector1.buyRecord(record4);
     recordCollector1.buyRecord(record5);
     assert.deepStrictEqual(recordCollector1.showMostValuable(), record5);
+  });
+
+  it('should be able to compare collection values', function(){
+    recordCollector1.buyRecord(record1);
+    recordCollector1.buyRecord(record4);
+    recordCollector1.buyRecord(record5);
+    recordCollector2.buyRecord(record2);
+    recordCollector2.buyRecord(record3);
+    assert.strictEqual(recordCollector1.compareValue(recordCollector2), "My collection value is: £60, the other collectors value is: £20")
   });
 
 
